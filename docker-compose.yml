@@ -1,0 +1,16 @@
+version: "3.9"
+services:
+  car-ia-db:
+    image: postgres
+    restart: always
+    container_name: car-ia-db
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_PASSWORD: car-ia-db-123
+      PGDATA: /data/postgres
+    volumes:
+      - postgres:/data/postgres
+
+volumes:
+  postgres:
